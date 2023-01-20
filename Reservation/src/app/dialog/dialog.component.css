@@ -1,0 +1,25 @@
+.mat-button{
+position: relative;
+}
+.n{
+    float: right;
+    clear:both;
+
+}
+/* .example-spacer {
+    flex: 1 1 auto;
+  } */
+  .example-spacer{
+    position: relative;
+    left: 10em;
+   }
+   .dialogC {
+    position: relative !important;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }

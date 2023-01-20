@@ -1,0 +1,72 @@
+<mat-toolbar  color="primary">
+  <span>TravelPlanet</span>
+  <span class="example-space"></span>
+  <mat-form-field>
+    <mat-label>Search bar </mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Taj Hotel" #input appearance="outline">
+  </mat-form-field>
+  <span class="example-spacer"></span>
+  <button  mat-flat-button color="Warn"  class="example-icon" (click)="logout()">Logout</button>
+</mat-toolbar>
+
+<mat-label>My Reservartions </mat-label>
+
+  <button  class="add" mat-flat-button color="accent" (click)="onAdd()"  #Aks >Add</button>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="matdata" matSort>
+
+
+    <ng-container matColumnDef="Slno">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Slno </th>
+      <td mat-cell *matCellDef="let row"> {{row.Slno}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Hostel">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Hotel </th>
+      <td mat-cell *matCellDef="let row"> {{row.Hostel}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Arrival">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival </th>
+      <td mat-cell *matCellDef="let row"> {{row.Arrival |date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Departure">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure </th>
+      <td mat-cell *matCellDef="let row"> {{row.Departure| date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+      <td mat-cell *matCellDef="let row"> {{row.Type}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Guests">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Guests </th>
+      <td mat-cell *matCellDef="let row"> {{row.Guests}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+      <td mat-cell *matCellDef="let row"> {{row.Price  |currency:'INR'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Manage">
+      <th mat-header-cell *matHeaderCellDef> Manage </th>
+      <td mat-cell *matCellDef="let row">
+         <button  mat-flat-button color="accent" (click)="onEdit(row)">Edit</button>|
+         <button   mat-flat-button color="accent" (click)="Ondelete(row)">Delete</button>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+  <mat-paginator  [pageSizeOptions]="[4,8,10]"  ></mat-paginator>
+</div>
+
+
+
+
+
+

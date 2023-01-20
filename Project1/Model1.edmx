@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Emptable">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="50" />
+          <Property Name="TLName" Type="varchar" MaxLength="50" />
+          <Property Name="DOJ" Type="int" />
+        </EntityType>
+        <EntityType Name="Projecttable">
+          <Key>
+            <PropertyRef Name="TLName" />
+          </Key>
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="ProjectName" Type="varchar" MaxLength="50" />
+          <Property Name="TLName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TeamSize" Type="int" />
+        </EntityType>
+        <EntityType Name="TLtable">
+          <Key>
+            <PropertyRef Name="TLName" />
+          </Key>
+          <Property Name="ID" Type="int" />
+          <Property Name="Projectname" Type="varchar" MaxLength="50" />
+          <Property Name="TLName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ProjectModelStoreContainer">
+          <EntitySet Name="Emptable" EntityType="Self.Emptable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projecttable" EntityType="Self.Projecttable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TLtable" EntityType="Self.TLtable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Emptable">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOJ" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Projecttable">
+          <Key>
+            <PropertyRef Name="TLName" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" />
+          <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TeamSize" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TLtable">
+          <Key>
+            <PropertyRef Name="TLName" />
+          </Key>
+          <Property Name="ID" Type="Int32" />
+          <Property Name="Projectname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ProjectEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Emptables" EntityType="Self.Emptable" />
+          <EntitySet Name="Projecttables" EntityType="Self.Projecttable" />
+          <EntitySet Name="TLtables" EntityType="Self.TLtable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectModelStoreContainer" CdmEntityContainer="ProjectEntities3">
+          <EntitySetMapping Name="Emptables">
+            <EntityTypeMapping TypeName="ProjectModel.Emptable">
+              <MappingFragment StoreEntitySet="Emptable">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="TLName" ColumnName="TLName" />
+                <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projecttables">
+            <EntityTypeMapping TypeName="ProjectModel.Projecttable">
+              <MappingFragment StoreEntitySet="Projecttable">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="TLName" ColumnName="TLName" />
+                <ScalarProperty Name="TeamSize" ColumnName="TeamSize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TLtables">
+            <EntityTypeMapping TypeName="ProjectModel.TLtable">
+              <MappingFragment StoreEntitySet="TLtable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Projectname" ColumnName="Projectname" />
+                <ScalarProperty Name="TLName" ColumnName="TLName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

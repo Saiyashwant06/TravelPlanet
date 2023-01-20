@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SamplesModelStoreContainer" CdmEntityContainer="SamplesEntities1">
+    <EntitySetMapping Name="MyReservations">
+      <EntityTypeMapping TypeName="SamplesModel.MyReservation">
+        <MappingFragment StoreEntitySet="MyReservations">
+          <ScalarProperty Name="Slno" ColumnName="Slno" />
+          <ScalarProperty Name="Hostel" ColumnName="Hostel" />
+          <ScalarProperty Name="Arrival" ColumnName="Arrival" />
+          <ScalarProperty Name="Departure" ColumnName="Departure" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Guests" ColumnName="Guests" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

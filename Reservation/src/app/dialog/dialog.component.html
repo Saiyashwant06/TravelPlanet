@@ -1,0 +1,65 @@
+<div class="example-spacer">
+ 
+      <mat-dialog-content>
+        <button mat-button class="close-icon" [mat-dialog-close]="true">
+            <mat-icon>close</mat-icon>
+        </button>
+ 
+<form  [formGroup]="registerform" >
+    <div mat-dialog-content class="form-group">
+        <mat-form-field appearance="outline">
+            <input  type="number" class="form-control" formControlName="Slno" matInput placeholder="Slno"/>
+        </mat-form-field><br>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-select  class="form-Control" formControlName="Hostel"  placeholder="Hotel">
+                <mat-option value="Aria">Aria</mat-option>
+                <mat-option value="Marriott">Marriott</mat-option>
+                <mat-option value="Novel">Novel</mat-option>
+                <mat-option value="The Plaza">The Plaza</mat-option>
+            </mat-select> 
+        </mat-form-field><br>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Date of Arrival</mat-label>
+            <input  matInput [matDatepicker]="Arrival" class="form-Control" formControlName="Arrival">
+            <mat-datepicker-toggle matIconSuffix [for]="Arrival"></mat-datepicker-toggle>
+            <mat-datepicker #Arrival></mat-datepicker>
+        </mat-form-field><br>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Date of Departure</mat-label>
+            <input  matInput [matDatepicker]="Departure" class="form-Control" formControlName="Departure">
+            <mat-datepicker-toggle matIconSuffix [for]="Departure"></mat-datepicker-toggle>
+            <mat-datepicker #Departure></mat-datepicker>
+        </mat-form-field><br>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-select placeholder="Type" class="form-Control" formControlName="Type" >
+                <mat-option value="Economy">Economy</mat-option>
+                <mat-option value="Double">Double</mat-option>
+                <mat-option value="Suite">Suite</mat-option>
+                <mat-option value="Luxury Suite">Luxury Suite</mat-option>
+            </mat-select>
+        </mat-form-field><br>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <input   type="number" matInput placeholder="Guests" class="form-Control" formControlName="Guests"/>
+        </mat-form-field><br>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <input   type="number" matInput placeholder="Price" class="form-Control" formControlName="Price"/>
+        </mat-form-field><br>
+    </div>
+    <div>
+            <button mat-raised-button color="accent" (click)="onSave()" >{{enable}}</button>
+            <button mat-button color="primary" (cilck)="Reset()">{{unebale}}</button>
+    </div>
+</form>
+

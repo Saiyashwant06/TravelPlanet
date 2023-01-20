@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+  }
+  
+  /* .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  } */
+  
+  td, th {
+    width: 10%;
+  }
+  
+.add{
+    position: relative;
+    left: 90em;
+    margin: 1em 0em;
+  }
+
+   .example-spacer {
+    flex: 1 1 auto;
+    margin-left: 85px;
+  }
+    .example-space {
+    flex: 1 1 auto;
+    margin-left: 84px;
+  }
+  

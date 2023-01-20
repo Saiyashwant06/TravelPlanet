@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Emptable">
+    <Key>
+      <PropertyRef Name="TLName" />
+    </Key>
+    <Property Name="EmpId" Type="int" />
+    <Property Name="EmpName" Type="varchar" MaxLength="50" />
+    <Property Name="TLName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOJ" Type="int" />
+  </EntityType>
+  <EntityType Name="Projecttable">
+    <Key>
+      <PropertyRef Name="TLName" />
+    </Key>
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="ProjectName" Type="varchar" MaxLength="50" />
+    <Property Name="TLName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TeamSize" Type="int" />
+  </EntityType>
+  <EntityType Name="TLtable">
+    <Key>
+      <PropertyRef Name="TLName" />
+    </Key>
+    <Property Name="ID" Type="int" />
+    <Property Name="Projectname" Type="varchar" MaxLength="50" />
+    <Property Name="TLName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ProjectModelStoreContainer">
+    <EntitySet Name="Emptable" EntityType="Self.Emptable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projecttable" EntityType="Self.Projecttable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TLtable" EntityType="Self.TLtable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
